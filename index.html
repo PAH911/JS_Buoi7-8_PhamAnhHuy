@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập JS buổi 2-3</title>
+    <!-- Flowbite -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Button List -->
+    <div
+      class="container flex-col justify-center items-center rounded-xl bg-orange-200 m-9 w-2/3"
+    >
+      <h1 class="font-bold text-center text-black pt-5">
+        BÀI TẬP JAVASCRIPT BUỔI 5
+      </h1>
+      <div class="md:flex p-8">
+        <ul
+          class="flex-column space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 w-1/6 md:me-4 mb-4 md:mb-0"
+        >
+          <li>
+            <button
+              id="Bai1"
+              class="inline-flex items-center px-4 py-3 text-white bg-orange-400 hover:bg-orange-600 rounded-lg w-full border-2 border-zinc-600 cursor-pointer"
+              onclick="changeContent('Bai1')"
+            >
+              <i class="fa-solid fa-school"></i>
+              <span class="pl-3">Bài 1</span>
+            </button>
+          </li>
+          <li>
+            <button
+              id="Bai2"
+              class="inline-flex items-center px-4 py-3 text-white bg-orange-400 hover:bg-orange-600 rounded-lg w-full border-2 border-zinc-600 cursor-pointer"
+              onclick="changeContent('Bai2')"
+            >
+              <i class="fa-solid fa-plug-circle-bolt"></i>
+              <span class="pl-4">Bài 2</span>
+            </button>
+          </li>
+          <li>
+            <button
+              id="Bai3"
+              class="inline-flex items-center px-4 py-3 text-white bg-orange-400 hover:bg-orange-600 rounded-lg w-full border-2 border-zinc-600 cursor-pointer"
+              onclick="changeContent('Bai3')"
+            >
+              <i class="fa-solid fa-money-bill-wave"></i>
+              <span class="pl-4">Bài 3</span>
+            </button>
+          </li>
+          <li>
+            <button
+              id="Bai4"
+              class="inline-flex items-center px-4 py-3 text-white bg-orange-400 hover:bg-orange-600 rounded-lg w-full border-2 border-zinc-600 cursor-pointer"
+              onclick="changeContent('Bai4')"
+            >
+              <i class="fa-solid fa-tower-cell"></i>
+              <span class="pl-4">Bài 4</span>
+            </button>
+          </li>
+        </ul>
+        <!-- Content -->
+        <div class="p-6 bg-orange-100 text-gray-500 rounded-lg w-full">
+          <!-- Bài 1 -->
+          <div id="content_1" class="hidden">
+            <h3 class="text-lg font-bold text-black mb-2">
+              Bài 1: Quản lý tuyển sinh
+            </h3>
+            <div class="form-group mb-2">
+              <div class="card w-50 mx-auto">
+                <div class="card-body">
+                  <div class="form-group text-black">
+                    <p>Điểm chuẩn:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="diemChuan"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>
+                      Chọn khu vực: (nếu không thuộc khu vực nào thì bỏ qua)
+                    </p>
+                    <div class="dropdow__list py-3">
+                      <input
+                        type="radio"
+                        name="khuVuc"
+                        class="form-control rounded-xl my-3"
+                        id="khuVucA"
+                      />
+                      <label class="pr-5" for="khuVucA">Khu vực A</label>
+
+                      <input
+                        type="radio"
+                        name="khuVuc"
+                        class="form-control rounded-xl my-3"
+                        id="khuVucB"
+                      />
+                      <label class="pr-5" for="khuVucB">Khu vực B</label>
+
+                      <input
+                        type="radio"
+                        name="khuVuc"
+                        class="form-control rounded-xl my-3"
+                        id="khuVucC"
+                      />
+                      <label for="khuVucC">Khu vực C</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group text-black">
+                    <p>Chọn đối tượng:</p>
+                    <select
+                      class="form-control rounded-xl my-3 py-2 pl-3"
+                      id="doiTuong"
+                    >
+                      <option value="doiTuong0">Không thuộc đối tượng</option>
+                      <option value="doiTuong1">Đối tượng 1</option>
+                      <option value="doiTuong2">Đối tượng 2</option>
+                      <option value="doiTuong3">Đối tượng 3</option>
+                    </select>
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Điểm môn thứ 1:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="diemMon1"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Điểm môn thứ 2:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="diemMon2"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Điểm môn thứ 3:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="diemMon3"
+                    />
+                  </div>
+                </div>
+                <div class="text-center rounded-xl bg-orange-200 mt-5">
+                  <button
+                    onclick="tinhDiem()"
+                    id="btnKetQua"
+                    class="btn bg-green-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Kết quả
+                  </button>
+                  <button
+                    onclick="resetForm1()"
+                    id="btnReset"
+                    class="btn bg-red-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Reset
+                  </button>
+                  <div class="pb-3 font-bold text-black">
+                    <span class="btn" id="tongDiem"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bài 2 -->
+          <div id="content_2" class="hidden">
+            <h3 class="text-lg font-bold text-black mb-2">
+              Bài 2: Tính tiền điện
+            </h3>
+            <div class="form-group mb-2">
+              <div class="card w-50 mx-auto">
+                <div class="card-body">
+                  <div class="form-group text-black">
+                    <p>Nhập họ tên:</p>
+                    <input
+                      type="text"
+                      class="form-control rounded-xl my-3"
+                      id="hoTen"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Nhập số KW:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="soKW"
+                    />
+                  </div>
+                </div>
+                <div class="text-center rounded-xl bg-orange-200 mt-5">
+                  <button
+                    onclick="tinhTienDien()"
+                    id="btnTinhTienDien"
+                    class="btn bg-green-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Tính tiền điện
+                  </button>
+                  <button
+                    onclick="resetForm2()"
+                    id="btnReset"
+                    class="btn bg-red-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Reset
+                  </button>
+                  <div class="pb-3 font-bold text-black">
+                    <span class="btn" id="tienDien"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bài 3 -->
+          <div id="content_3" class="hidden">
+            <h3 class="text-lg font-bold text-black mb-2">
+              Bài 3: Tính thuế thu nhập cá nhân
+            </h3>
+            <div class="form-group mb-2">
+              <div class="card w-50 mx-auto">
+                <div class="card-body">
+                  <div class="form-group text-black">
+                    <p>Họ tên:</p>
+                    <input
+                      type="text"
+                      class="form-control rounded-xl my-3"
+                      id="nguoiDongThue"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Tổng thu nhập năm:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="tongThuNhapNam"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Số người phụ thuộc:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="nguoiPhuThuoc"
+                    />
+                  </div>
+                </div>
+                <div class="text-center rounded-xl bg-orange-200 mt-5">
+                  <button
+                    onclick="tinhTienThue()"
+                    id="btnTinhTienThue"
+                    class="btn bg-green-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Tính tiền thuế
+                  </button>
+                  <button
+                    onclick="resetForm3()"
+                    id="btnReset"
+                    class="btn bg-red-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Reset
+                  </button>
+                  <div class="pb-3 font-bold text-black">
+                    <span class="btn" id="tienThue"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bài 4 -->
+          <div id="content_4" class="hidden">
+            <h3 class="text-lg font-bold text-black mb-2">
+              Bài 4: Tính tiền cáp
+            </h3>
+            <div class="form-group mb-2">
+              <div class="card w-50 mx-auto">
+                <div class="card-body">
+                  <div class="form-group text-black">
+                    <p>Chọn đối tượng:</p>
+                    <select
+                      class="form-control rounded-xl my-3 py-2 pl-3"
+                      id="loaiKhachHang"
+                      onchange="chonLoaiKhachHang()"
+                    >
+                      <option value="chonLoai">Chọn loại khách hàng</option>
+                      <option value="nhaDan">Nhà Dân</option>
+                      <option value="doanhNghiep">Doanh Nghiệp</option>
+                    </select>
+                  </div>
+                  <div class="form-group text-black hidden" id="soKetNoiDiv">
+                    <p>Số kết nối:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="soKetNoi"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Nhập mã khách hàng:</p>
+                    <input
+                      type="text"
+                      class="form-control rounded-xl my-3"
+                      id="maKH"
+                    />
+                  </div>
+                  <div class="form-group text-black">
+                    <p>Số kênh cao cấp:</p>
+                    <input
+                      type="number"
+                      class="form-control rounded-xl my-3"
+                      id="soKenh"
+                    />
+                  </div>
+                </div>
+                <div class="text-center rounded-xl bg-orange-200 mt-5">
+                  <button
+                    onclick="tinhTienCap()"
+                    id="btnTinh"
+                    class="btn bg-green-600 m-3 text-white rounded-xl py-2 px-4 font-semibold"
+                  >
+                    Tính tiền cáp
+                  </button>
+                  <button
+                    onclick="resetForm4()"
+                    id="btnReset"
+                    class="btn bg-red-600 m-3 text-white rounded-xl p-2 font-semibold"
+                  >
+                    Reset
+                  </button>
+                  <div class="pb-3 font-bold text-black">
+                    <span class="btn" id="tienCap"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <!-- Nhúng JS -->
+    <script src="index.js"></script>
+  </body>
+</html>
